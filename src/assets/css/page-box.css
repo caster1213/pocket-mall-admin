@@ -1,0 +1,173 @@
+.p-container {
+    font-size: 12px !important;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.p-container /deep/ .ant-pagination {
+    font-size: 12px !important;
+}
+
+.p-container /deep/ .ant-time-picker-input {
+    height: 30px;
+}
+
+.p-container /deep/ .ant-pagination-options .ant-select-selection-selected-value {
+    font-size: 12px !important;
+}
+
+.p-container /deep/ .ant-pagination-options-quick-jumper {
+    font-size: 12px !important;
+}
+
+.p-container .ant-table-thead > tr > th {
+    background-color: #f7f8fa;
+}
+
+
+.p-tab-box {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.p-tab-box ul li {
+    list-style: none;
+    display: inline-block;
+    height: 34px;
+    color: #9797A1;
+    margin-right: 25px;
+    padding: 0 15px 0 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.p-tab-box span {
+    font-size: 14px;
+    line-height: 34px;
+    padding-left: 5px;
+}
+
+.p-tab-box .active {
+    background-color: #1890ff;
+    color: #FFF;
+}
+
+.p-box {
+    border-radius: 6px;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.p-box .title {
+    margin-bottom: 20px;
+}
+
+.p-box /deep/ .ant-form-item-label label {
+    font-size: 12px !important;
+}
+
+.p-box /deep/ .ant-form-explain {
+    font-size: 12px;
+}
+
+.p-box /deep/ .ant-input {
+    font-size: 12px;
+}
+
+.p-box /deep/ .ant-table-column-title {
+    font-size: 12px;
+}
+.activity-filter-form{
+    margin-top: 10px;
+}
+.activity-filter-form /deep/ .ant-form {
+    font-size: 14px !important;
+}
+
+.p-box-bg-gary {
+    background-color: #F2F2F6;
+}
+
+.p-box-bg-gary1 {
+    background-color: #f7f8fa;
+}
+
+.p-box-bg-white {
+    background-color: #FFFFff;
+    font-size: 12px !important;
+}
+
+.p-input-right {
+    margin-right: 10px;
+}
+
+.p-input-right-5 {
+    margin-right: 5px;
+}
+
+.p-input-left {
+    margin-left: 10px;
+}
+
+.p-input-left-5 {
+    margin-left: 10px;
+}
+
+.p-help-text {
+    color: #9797A1;
+}
+
+
+
+.order-item-table {
+    width: 100%;
+}
+
+.order-item-table thead tr td {
+    line-height: 30px;
+    padding: 8px 15px;
+}
+
+.order-item-table .w250 {
+    max-width: 300px;
+}
+
+.order-item-table .w {
+    width: calc(100% - 65px);
+}
+
+.order-item-table tbody tr td {
+    text-align: left;
+    padding: 8px 15px;
+    border-top: 1px solid #ededef;
+}
+
+.order-item-table .top {
+    vertical-align: top;
+}
+
+.order-item-table .line1 {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.ant-select-dropdown-menu-item {
+    font-size: 12px !important;
+}
+
+
+::-webkit-input-placeholder {
+    font-size: 12px !important;
+}
+
+::-moz-placeholder {
+    font-size: 12px !important;
+}
+
+:-ms-input-placeholder {
+    font-size: 12px !important;
+}

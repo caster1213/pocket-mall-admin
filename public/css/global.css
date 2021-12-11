@@ -1,0 +1,292 @@
+body {
+
+}
+
+html {
+    font-size: 12px;
+}
+
+table, tr, td, thead, tbody, ul, p {
+    padding: 0;
+    margin: 0;
+}
+
+.h4 {
+    font-size: 18px;
+    font-weight: 700
+}
+
+.h5 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.text-action-btn{
+    color: #155bd4 !important;
+    font-size: 13px !important;
+    padding: 0 10px 0 0 !important;
+}
+
+.font-size-12 {
+    font-size: 12px !important;
+}
+
+.font-size-12 input {
+    font-size: 12px !important;
+}
+
+.font-size-13 {
+    font-size: 13px !important;
+}
+.font-size-14 {
+    font-size: 14px !important;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-color-9797a1 {
+    color: #9797a1;
+}
+
+.panel {
+    background-color: #fff;
+    border: 1px solid transparent;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    margin-bottom: 5px;
+}
+
+.bottom-box {
+    position: fixed;
+    background-color: #fff;
+    border-radius: 10px 10px 0 0;
+    height: 50px;
+    width: 100%;
+}
+
+.ant-modal-header {
+    border-bottom: 0 !important;
+}
+
+.ant-modal-footer {
+    border-top: 0 !important;
+}
+
+.text-muted {
+    color: #9797A1 !important;
+}
+
+.not-edit {
+    cursor: not-allowed;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+}
+
+.ant-table-thead tr th{
+    background-color:#F2F2F6 ;
+}
+
+.ant-form label {
+    font-size: 13px !important;
+}
+
+.ant-select-selection-selected-value {
+    font-size: 12px !important;
+}
+
+.ant-form-item-label label {
+    font-size: 13px !important;
+}
+
+.ant-input-group-addon {
+    font-size: 12px !important;
+}
+
+.ant-form-explain {
+    font-size: 12px !important;
+}
+
+.ant-form-item-label {
+    line-height: 30px !important;
+}
+
+.ant-form-item-control {
+    line-height: 30px !important;
+}
+
+.ant-form-item {
+    margin-bottom: 20px !important;
+}
+
+.ant-table-tbody > tr > td{
+    font-size: 13px;
+}
+
+.ant-message{
+    font-size: 13px !important;
+}
+
+.has-error .ant-form-explain{
+    margin-top: 5px;
+}
+
+.text-row-1 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.radio-list {
+    margin-top: 5px;
+}
+
+.radio-list label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.ml5 {
+    margin-left: 5px;
+}
+
+.ml10 {
+    margin-left: 10px;
+}
+
+.ml15 {
+    margin-left: 15px;
+}
+
+.ml20 {
+    margin-left: 15px;
+}
+
+.mt5 {
+    margin-top: 5px;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.mt15 {
+    margin-top: 15px;
+}
+
+.mt20 {
+    margin-top: 15px;
+}
+
+.mb5 {
+    margin-bottom: 5px;
+}
+
+.mb10 {
+    margin-bottom: 10px;
+}
+
+.mb15 {
+    margin-bottom: 15px;
+}
+
+.mb20 {
+    margin-bottom: 15px;
+}
+
+.mr5 {
+    margin-right: 5px;
+}
+
+.mr10 {
+    margin-right: 10px;
+}
+
+.mr15 {
+    margin-right: 15px;
+}
+
+.mr20 {
+    margin-right: 15px;
+}
+
+.pl5 {
+    padding-left: 5px;
+}
+
+.pl10 {
+    padding-left: 10px;
+}
+
+.pl15 {
+    padding-left: 15px;
+}
+
+.pl20 {
+    padding-left: 15px;
+}
+
+.pt5 {
+    padding-top: 5px;
+}
+
+.pt10 {
+    padding-top: 10px;
+}
+
+.pt15 {
+    padding-top: 15px;
+}
+
+.pt20 {
+    padding-top: 15px;
+}
+
+.pb5 {
+    padding-bottom: 5px;
+}
+
+.pb10 {
+    padding-bottom: 10px;
+}
+
+.pb15 {
+    padding-bottom: 15px;
+}
+
+.pb20 {
+    padding-bottom: 15px;
+}
+
+.pr5 {
+    padding-right: 5px;
+}
+
+.pr10 {
+    padding-right: 10px;
+}
+
+.pr15 {
+    padding-right: 15px;
+}
+
+.pr20 {
+    padding-right: 15px;
+}
+
+.spacing{
+    letter-spacing: 5px;
+}
+
+.line1 {
+    display:-webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}

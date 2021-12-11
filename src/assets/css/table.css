@@ -1,0 +1,13 @@
+.p-table {
+    border-left: 1px solid #e8e8e8;
+    border-right: 1px solid #e8e8e8;
+    background-color: #fff;
+}
+
+.p-table /deep/ .ant-table-body tbody tr:nth-child(odd) td {
+    background-color: #F2F2F6 !important;
+}
+
+.p-table /deep/ .ant-table-body tbody tr td {
+    font-size: 13px;
+}

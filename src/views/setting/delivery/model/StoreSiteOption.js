@@ -1,0 +1,8 @@
+class StoreSiteOption {
+    constructor() {
+    }
+
+    toObject(){
+
+    }
+}
