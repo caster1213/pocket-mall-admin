@@ -46,7 +46,20 @@ import UserLevelService from '../service/user.level.service'
 
 export default {
   name: "UserLevelSelectPicker",
-  props: {},
+  props: {
+    freeOption: {
+      type: Array,
+      default: () => {
+        return []
+      }
+    },
+    chargeOption: {
+      type: Array,
+      default: () => {
+        return []
+      }
+    }
+  },
   data() {
     return {
       visible: false,
@@ -87,13 +100,23 @@ export default {
       return this[key].level.filter(x => x.name.indexOf(this.searchValue) > -1)
     }
   },
+  watch: {
+    freeOption: function (level) {
+      for (const ele of this.free.level) {
+        if (level.findIndex(x => x.level === ele.level) === -1) {
+          ele.selected = false
+        }
+      }
+    }
+  },
   created() {
     UserLevelService.list().then(res => {
       this.free.level = res.data.result.map(ele => {
+        let selected = this.freeOption.findIndex(x => x.level === ele.level) > -1
         return {
           level: ele.level,
           name: ele.name,
-          selected: false
+          selected: selected
         }
       })
     })
@@ -101,7 +124,10 @@ export default {
   methods: {
     onConfirm() {
       this.visible = false
-      this.$emit('confirm')
+      this.$emit('change', {
+        free: this.free.level.filter(ele => ele.selected),
+        charge: this.charge.level.filter(ele => ele.selected)
+      })
     },
     onFreeClick() {
       this.charge.isActive = false

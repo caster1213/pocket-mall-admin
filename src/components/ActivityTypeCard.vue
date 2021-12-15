@@ -4,7 +4,7 @@
       <div class="activity-type-card-title">{{ title }}</div>
       <div class="activity-type-card-desc">{{ desc }}</div>
       <div v-if="isEmpty === false" class="activity-type-card-button">
-        <a-button type="primary" @click="$emit('create')">立即新建</a-button>
+        <a-button type="primary" @click="$emit('click')">立即新建</a-button>
       </div>
     </div>
   </div>

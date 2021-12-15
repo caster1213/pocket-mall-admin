@@ -1,3 +1,14 @@
+/**
+ * 商品选择范围
+ * @type {{all: number, product: number, group: number}}
+ */
+let activityProductScopeType = {
+    all: 0,//全部
+    product: 1,//商品
+    group: 2//分组
+};
+
+
 export default {
     /**
      * 运费计价类型
@@ -164,15 +175,11 @@ export default {
     productStatus: {
         now: 1
     },
-    activityProductScopeType: {
-        all: 1,
-        group: 2,
-        product: 3
-    },
+    activityProductScopeType,
     couponType: {
-        cashBack: 1,
+        reward: 1,
         discount: 2,
-        verticalReduction: 3,
+        reduction: 3,
         freight: 4
     },
     couponThresholdType: {
@@ -185,12 +192,12 @@ export default {
         now: 2,
         delay: 3
     },
-    couponReceiveLimitType:{
-        all:1,
-        target:2
+    couponReceiveLimitType: {
+        all: 1,
+        target: 2
     },
-    couponReceiveCountType:{
-        all:1,
+    couponReceiveCountType: {
+        all: 1,
     },
     pointCommonRule: {
         pointName: 'Point.Name',

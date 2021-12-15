@@ -2,11 +2,12 @@
   <page :loading="loading">
     <div style="padding: 0" class="p-box p-box-bg-white">
       <a-row type="flex">
-        <activity-type-card @create="$router.push({path:'/marketing/coupon/add',query:{type:1}})" title="满减券"
+        <activity-type-card @click="$router.push({path:'/coupon/add',query:{type:couponType.reward}})"
+                            title="满减券"
                             desc="例：满100元减20元"/>
-        <activity-type-card title="折扣券" desc="例：满100元打9折"/>
-        <activity-type-card title="运费券" desc="减免运费"/>
-        <activity-type-card title="商品兑换券" desc="用于兑换指定商品"/>
+        <activity-type-card @click="$router.push({path:'/coupon/update',query:{type:couponType.discount}})" title="折扣券" desc="例：满100元打9折"/>
+        <activity-type-card @click="$router.push({path:'/coupon/update',query:{type:couponType.freight}})" title="运费券" desc="减免运费"/>
+        <activity-type-card @click="$router.push({path:'/coupon/update',query:{type:couponType.reduction}})" title="商品兑换券" desc="用于兑换指定商品"/>
       </a-row>
     </div>
     <div class="p-box p-box-bg-gary1">
@@ -42,9 +43,10 @@
 </template>
 
 <script>
-import Page from '../../../components/Page'
-import ActivityTypeCard from "../../../components/ActivityTypeCard"
-import query from '../../../mixin/query'
+import Page from '@/components/Page'
+import ActivityTypeCard from "@/components/ActivityTypeCard"
+import query from '@/mixin/query'
+import constant from "@/common/constant"
 
 export default {
   name: 'CouponPage',
@@ -56,6 +58,7 @@ export default {
   data() {
     return {
       loading: false,
+      couponType: constant.couponType,
       query: {
         couponType: -1,
         couponState: -1

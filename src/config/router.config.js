@@ -203,15 +203,18 @@ let router = new Router({
                 component: () => import('../views/markting/package/PackageDiscountActivityAddPage'),
                 meta: {depth: 2, key: 70105, name: '添加套餐'}
             }, {
-                path: '/marketing/coupon',
+                path: '/coupon',
                 name: 'marketing.coupon',
                 component: () => import('../views/markting/coupon/CouponPage'),
                 meta: {depth: 1, key: 70104, name: '优惠券'}
             }, {
-                path: '/marketing/coupon/add',
-                name: 'marketing.coupon/add',
+                path: '/coupon/add',
                 component: () => import('../views/markting/coupon/AddCouponPage'),
                 meta: {depth: 2, key: 70104, name: '新建优惠券'}
+            }, {
+                path: '/coupon/update',
+                component: () => import('../views/markting/coupon/AddCouponPage'),
+                meta: {depth: 2, key: 70104, name: '编辑优惠券'}
             }, {
                 path: '/marketing/sign',
                 name: 'marketing.sign',

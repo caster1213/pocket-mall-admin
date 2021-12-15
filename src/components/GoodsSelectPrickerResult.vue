@@ -3,11 +3,11 @@
 </template>
 
 <script>
-import query from '../mixin/query'
+import pagination from '../mixin/query'
 
 export default {
   name: "GoodsSelectPickerResult",
-  mixins: [query],
+  mixins: [pagination],
   props: {
     isShowLink: {
       type: Boolean,
@@ -20,13 +20,18 @@ export default {
       }
     }
   },
+  created() {
+    this.pagination.defaultPageSize = 10
+    this.pagination.pageSizeOptions[0] = '10'
+  },
   data() {
     return {
       columns: [{
         title: '商品',
+        width: 300,
         customRender: (value, row) => {
           let imageUrl = row.imageUrl.split(',')[0]
-          let link = this.isShowLink ? <a className="line1">{row.title}</a> : <span className="line1">{row.title}</span>
+          let link = this.isShowLink ? <a className="line1">{row.title}</a> : <span class="line1">{row.title}</span>
           return (<a-row type="flex">
             <div>
               <img width="60px" height="60px" src={imageUrl}/>
