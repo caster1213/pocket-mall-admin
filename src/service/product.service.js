@@ -16,21 +16,14 @@ export default {
   update(param) {
     return http.post('/product/update', param)
   },
-  updateIndex(param){
+  updateIndex(param) {
     return http.post('/product/update/index', param)
   },
-  updateGroup(param) {
-    return http.post('/product/group/update/', param)
-  },
-  updateBatchGroup(param) {
-    return http.post('/product/group/update/batch', param)
-  },
-  addGroup(param) {
-    return http.post('/product/group/add', param)
-  },
-  deleteGroup(param) {
-    return http.get('/product/group/delete', {params: param})
-  },
+  getProductGroup: (query) => http.get('/product/group', {params:query}),
+  updateGroup: (param) => http.post('/product/group/update/', param),
+  updateBatchGroup: (param) => http.post('/product/group/update/batch', param),
+  addGroup: (param) => http.post('/product/group/add', param),
+  deleteGroup: (param) => http.get('/product/group/delete', {params: param}),
   deleteProduct(param) {
     return http.get('/product/del', {params: param})
   },

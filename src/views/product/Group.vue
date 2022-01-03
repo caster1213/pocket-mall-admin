@@ -1,47 +1,43 @@
 <template>
-    <div class="components-form-demo-advanced-search">
-        <div style="margin-bottom: 25px">
-            <a-button @click="()=> {
-              addGroupWindowVisible = true
-              editStatus = false
-            }" type="primary">创建分组
-            </a-button>
-        </div>
-        <div class="search-result-list">
-            <a-table
-                    rowKey="id"
-                    :columns="columns"
-                    :loading="loading"
-                    :dataSource="data"
-                    :pagination="pagination"
-                    @change="onChange"
-            >
-                <template slot="action" slot-scope="val,row">
-                    <router-link tag="a" :to="{path:'/product/update',query:{id:row.id}}">编辑</router-link>
-                </template>
-            </a-table>
-        </div>
-        <a-modal :title="title" :visible="addGroupWindowVisible" @cancel="()=> addGroupWindowVisible = false" @ok="add">
-            <a-form-model ref="form" :model="model" :rules="{
+  <div class="components-form-demo-advanced-search">
+    <div style="margin-bottom: 25px">
+      <a-button @click="$router.push('/product/group/add')" type="primary">创建分组
+      </a-button>
+    </div>
+    <div class="search-result-list">
+      <a-table
+          rowKey="id"
+          :columns="columns"
+          :loading="loading"
+          :dataSource="data"
+          :pagination="pagination"
+          @change="onChange"
+      >
+        <template slot="action" slot-scope="val,row">
+          <router-link tag="a" :to="{path:'/product/update',query:{id:row.id}}">编辑</router-link>
+        </template>
+      </a-table>
+    </div>
+    <a-modal :title="title" :visible="addGroupWindowVisible" @cancel="()=> addGroupWindowVisible = false" @ok="add">
+      <a-form-model ref="form" :model="model" :rules="{
               'name':[{
                 required:true,message:'请填写分组名称'
               }]
             }">
-                <a-form-model-item required :labelCol="{ xs:{ span:24},sm:{span:7}}"
-                                   :wrapperCol="{xs:{ span:24},sm:{span:13}}"
-                                   label="分组名称">
-                    <a-input v-model="model.name" prop="name" />
-                </a-form-model-item>
-            </a-form-model>
-        </a-modal>
-    </div>
+        <a-form-model-item required :labelCol="{ xs:{ span:24},sm:{span:7}}"
+                           :wrapperCol="{xs:{ span:24},sm:{span:13}}"
+                           label="分组名称">
+          <a-input v-model="model.name" prop="name" />
+        </a-form-model-item>
+      </a-form-model>
+    </a-modal>
+  </div>
 </template>
 
 <script>
-import ProductService from '../../service/product.service'
-import moment from 'moment';
-import constant from '../../common/constant';
-import common from '../../common/common';
+import ProductService from '@/service/product.service'
+import moment from 'moment'
+import common from '@/common/common'
 
 export default {
   name: 'Group',
@@ -70,23 +66,23 @@ export default {
         title: '编辑',
         customRender: (value, row) => {
           return (
-            <div>
-              <a-button onClick={() => {
-                this.addGroupWindowVisible = true
-                this.editStatus = true
-                this.model.id = row.id
-                this.model.name = row.name
-              }} class="text-action-btn" type="link">
-                编辑
-              </a-button>
-              <a-popconfirm title="确定要删除该分组吗" onConfirm={() => {
-                this.onDelete(row.id)
-              }}>
-                <a-button class="text-action-btn" type="link">
-                  删除
+              <div>
+                <a-button onClick={() => {
+                   this.$router.push({
+                     path:'/product/group/update',
+                     query:{id:row.id}
+                   })
+                }} class="text-action-btn" type="link">
+                  编辑
                 </a-button>
-              </a-popconfirm>
-            </div>
+                <a-popconfirm title="确定要删除该分组吗" onConfirm={() => {
+                  this.onDelete(row.id)
+                }}>
+                  <a-button class="text-action-btn" type="link">
+                    删除
+                  </a-button>
+                </a-popconfirm>
+              </div>
           )
         }
       }],

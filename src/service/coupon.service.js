@@ -1,19 +1,9 @@
 import http from "@/config/service.config"
 
-let add = (args) => {
-    return http.post('', args)
-}
-
-let update = (args) => {
-    return http.post('', args)
-}
-
-let get = (args) => {
-    return http.get('', {params: args})
-}
-let list = (args) => {
-    return http.get('', {params: args})
-}
+let add = (args) => http.post('/coupon/add', args)
+let update = (args) => http.post('/coupon/update', args)
+let get = (args) => http.get('/coupon', {params: args})
+let list = (args) => http.get('/coupon/list', {params: args})
 
 export {
     add,

@@ -1,24 +1,24 @@
 <template>
   <p-page :loading="loading">
-    <p-title type="line" title="基础设置"/>
+    <p-title type="line" title="基础设置" />
     <div class="mt20">
       <a-form-model ref="form" :model="model" :rules="modelRules" :label-col="{span:3}" :wrapper-col="{span:15}">
         <a-form-model-item label="优惠券名称" required prop="name">
-          <a-input v-model="model.name" style="width: 240px"/>
+          <a-input v-model="model.name" style="width: 240px" />
         </a-form-model-item>
         <a-form-model-item label="名称备注" prop="label">
-          <a-input v-model="model.label" style="width: 240px"/>
+          <a-input v-model="model.label" style="width: 240px" />
         </a-form-model-item>
         <a-form-model-item label="总发送数量" required prop="count">
-          <a-input v-model="model.count" addon-after="张" style="width: 240px"/>
+          <a-input v-model="model.count" addon-after="张" style="width: 240px" />
         </a-form-model-item>
         <a-form-model-item label="适用商品" required>
           <div>
             <span class="text-muted font-size-12">若活动商品中存在分销商品，优惠后可能造成利润受损。</span>
           </div>
           <a-radio-group v-model="model.productScopeType" class="radio-list">
-            <a-radio :value="1">全部商品可用</a-radio>
-            <a-radio :value="2">
+            <a-radio :value="0">全部商品可用</a-radio>
+            <a-radio :value="1">
               <span class="mr10">指定商品可用</span>
             </a-radio>
             <template v-if="model.productScopeType === 2">
@@ -30,13 +30,13 @@
                                       @confirm="onGoodsSelectPickerConfirm"
                                       :select-type="goodsSelectPickerType"
                                       :select-goods-rows="model.goodsSelectRows"
-                                      :visible="goodsSelectPickerVisible"/>
+                                      :visible="goodsSelectPickerVisible" />
               <goods-select-picker-result v-if="goodsSelectPickerType === 'goods'"
                                           @delete="onGoodsSelectResultDelete"
-                                          :goods="model.goodsSelectRows"/>
+                                          :goods="model.goodsSelectRows" />
               <goods-select-picker-group-result v-if="goodsSelectPickerType === 'group'"
                                                 @delete="onGoodsGroupSelectResultDelete"
-                                                :list="model.goodsGroupSelectRows"/>
+                                                :list="model.goodsGroupSelectRows" />
             </template>
           </a-radio-group>
         </a-form-model-item>
@@ -50,7 +50,7 @@
                 <a-input v-model="model.thresholdOrderPriceValue"
                          :disabled="constant.couponThresholdType.orderPriceMax!== model.threshold"
                          class="ml5 mr5"
-                         style="width: 120px" addon-after="元"/>
+                         style="width: 120px" addon-after="元" />
                 <span>可用</span>
               </a-radio>
               <a-radio v-if="model.type !== constant.couponType.reduction"
@@ -60,7 +60,7 @@
                                 :min="1"
                                 :max="1000"
                                 :disabled="constant.couponThresholdType.orderCountMax!== model.threshold"
-                                style="width: 120px"/>
+                                style="width: 120px" />
                 <span class="ml5">件可用</span>
               </a-radio>
             </a-radio-group>
@@ -73,26 +73,28 @@
           <template v-if="model.type === constant.couponType.reward">
             <span class="mr5">减免</span>
             <a-input v-model="model.discountValue" @change="()=>{model.discountValid()}" style="width: 120px"
-                     addon-after="元"/>
+                     addon-after="元" />
           </template>
           <template v-else-if="model.type === constant.couponType.discount">
             <span class="mr5">打</span>
             <a-input v-model="model.discountValue" @change="()=>{model.discountValid()}" style="width: 120px"
-                     addon-after="折"/>
+                     addon-after="折" />
             <div class="mt10">
-              <a-checkbox @change="model.isMaxDiscountValue = !model.isMaxDiscountValue" :checked="model.isMaxDiscountValue">最多优惠</a-checkbox>
-              <a-input v-model="model.maxDiscountValue" style="width: 100px" addon-after="元"/>
+              <a-checkbox @change="model.isMaxDiscountValue = !model.isMaxDiscountValue"
+                          :checked="model.isMaxDiscountValue">最多优惠
+              </a-checkbox>
+              <a-input v-model="model.maxDiscountValue" style="width: 100px" addon-after="元" />
             </div>
           </template>
           <template v-if="model.type === constant.couponType.freight">
             <span class="mr5">运费减免</span>
             <a-input v-model="model.discountValue" @change="()=>{model.discountValid()}" style="width: 120px"
-                     addon-after="元"/>
+                     addon-after="元" />
           </template>
           <template v-if="model.type === constant.couponType.reduction">
             <span class="mr5 font-size-13">立减</span>
             <a-input v-model="model.discountValue" @change="()=>{model.discountValid()}" style="width: 120px"
-                     addon-after="元"/>
+                     addon-after="元" />
           </template>
           <span style="display: block;width: 445px;line-height: 18px" class="text-muted font-size-12 mt5">优惠内容是商家单独给消费者的优惠金额，设置大额优惠金额时需谨慎，以免造成资损（测试活动建议设置小额优惠内容）。</span>
           <div v-if="model.rules.discount.error" class="has-error">
@@ -103,21 +105,21 @@
           <a-radio-group v-model="model.expireType" class="radio-list">
             <a-radio :value="constant.couponExpireType.range">
               <a-range-picker v-model="model.expireDate"
-                              :disabled="constant.couponExpireType.range !== model.expireType"/>
+                              :disabled="constant.couponExpireType.range !== model.expireType" />
             </a-radio>
             <a-radio :value="constant.couponExpireType.now">
               <span class="mr5">领劵后立即生效,有效期</span>
               <a-input v-model="model.expireDay" :disabled="constant.couponExpireType.now !== model.expireType"
-                       style="width: 60px"/>
+                       style="width: 60px" />
               <span class="ml5">天</span>
             </a-radio>
             <a-radio :value="constant.couponExpireType.delay">
               <span class="mr5">领劵</span>
               <a-input v-model="model.delayDay" :disabled="constant.couponExpireType.delay !== model.expireType"
-                       style="width: 60px"/>
+                       style="width: 60px" />
               <span class="ml5 mr5">天后生效，有效期</span>
               <a-input v-model="model.receiveDay" :disabled="constant.couponExpireType.delay !== model.expireType"
-                       style="width: 60px"/>
+                       style="width: 60px" />
               <span class="ml5">天</span>
             </a-radio>
           </a-radio-group>
@@ -136,7 +138,7 @@
             积分抵现仍可与优惠券/码同时使用
           </div>
         </a-form-model-item>
-        <p-title class="mb10" type="line" title="发放和领取规则"/>
+        <p-title class="mb10" type="line" title="发放和领取规则" />
         <a-form-model-item label="领取人限制">
           <div class="mt5">
             <a-radio-group v-model="model.receiveLimitType" class="radio-list">
@@ -166,11 +168,11 @@
         </a-form-model-item>
         <a-form-model-item label="每人限领次数">
           <div class="mt5">
-            <a-radio-group v-model="receiveType" class="radio-list">
+            <a-radio-group v-model="model.isReceiveCount" class="radio-list">
               <a-radio :value="true">不限制</a-radio>
               <a-radio :value="false">
-                <a-input-number v-model="model.receiveCount" :disabled="receiveType" style="width: 80px" :max="10"
-                                :min="1"/>
+                <a-input-number v-model="model.receiveCount" :disabled="model.isReceiveCount" style="width: 80px" :max="10"
+                                :min="1" />
                 <span class="ml5">次</span>
               </a-radio>
             </a-radio-group>
@@ -180,10 +182,7 @@
           <a-checkbox :checked="model.isExpireNotice" @change="model.isExpireNotice = !model.isExpireNotice">
             <span class="mr5">优惠券过期前</span>
             <a-select :disabled="model.isExpireNotice === false" v-model="model.expireNotice" style="width: 60px">
-              <a-select-option :value="1">1</a-select-option>
-              <a-select-option :value="2">2</a-select-option>
-              <a-select-option :value="3">3</a-select-option>
-              <a-select-option :value="4">4</a-select-option>
+              <a-select-option v-for="count in 15" :key="count" :value="count">{{count}}</a-select-option>
             </a-select>
             <span class="ml5">天提醒</span>
           </a-checkbox>
@@ -206,10 +205,10 @@
 <script>
 import {Coupon, rules} from './model'
 import constant from '@/common/constant'
-import GoodsSelectPickerResult from "@/components/GoodsSelectPrickerResult"
-import GoodsSelectPickerGroupResult from "@/components/GoodsSelectPickerGroupResult"
+import GoodsSelectPickerResult from '@/components/GoodsSelectPrickerResult'
+import GoodsSelectPickerGroupResult from '@/components/GoodsSelectPickerGroupResult'
 import * as CouponService from '@/service/coupon.service'
-import common from "@/common/common"
+import common from '@/common/common'
 
 let coupon = new Coupon()
 export default {
@@ -242,6 +241,14 @@ export default {
   created() {
     this.model.type = parseInt(this.$route.query.type)
     this.isUpdate = this.$route.path.indexOf('update') > -1
+    this.loading = true
+    if (this.isUpdate) {
+      CouponService.get({id: this.$route.query.id}).then(res => {
+        this.loading = false
+        this.model.from(res.data.result)
+      })
+    }
+
   },
   methods: {
     onGoodsSelectPickerConfirm(rows, scopeType) {
@@ -276,14 +283,16 @@ export default {
     },
     onSubmit() {
       this.$refs.form.validate(valid => {
-        if (valid === this.model.valid()) {
+        if (valid && this.model.valid()) {
           let args = this.model.to()
+          this.submitLoading = true
           if (this.isUpdate) {
-            this.submitLoading = true
             CouponService.update(args).then(res => {
               this.submitLoading = false
               if (common.isSuccess(res)) {
                 console.log(res)
+              } else {
+                this.$message.error(res.data.msg)
               }
             })
           } else {
@@ -291,6 +300,8 @@ export default {
               this.submitLoading = false
               if (common.isSuccess(res)) {
                 console.log(res)
+              } else {
+                this.$message.error(res.data.msg)
               }
             })
           }

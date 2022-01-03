@@ -97,7 +97,6 @@ export default {
     regular: {},
     unitConvert: {
         byteToUnit(value) {
-            let sizes = ['kb', 'mb', 'gb']
             let kb = 1024
             let mb = kb * 1024
             let gb = mb * 1024
