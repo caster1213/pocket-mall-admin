@@ -251,6 +251,21 @@ let router = new Router({
         component: () => import('../views/markting/limitDiscount/AddLimitDiscountPage'),
         meta: {depth: 1, key: 70109, name: '新建活动'}
       }, {
+        path: '/marketing/satisfy/list',
+        name: 'marketing.satisfy.list',
+        component: () => import('../views/markting/satisfy/SatisfyList'),
+        meta: {depth: 1, key: 701010, name: '满减折扣'}
+      }, {
+        path: '/marketing/satisfy/add',
+        name: 'marketing.satisfy.add',
+        component: () => import('../views/markting/satisfy/SatisfyEdit'),
+        meta: {depth: 2, key: 701010, name: '新建活动'}
+      }, {
+        path: '/marketing/satisfy/update',
+        name: 'marketing.satisfy.update',
+        component: () => import('../views/markting/satisfy/SatisfyEdit'),
+        meta: {depth: 2, key: 701010, name: '编辑活动'}
+      }, {
         path: '/marketing/redenvelope/history',
         name: 'marketing.redenvelope.history',
         component: () => import('../views/markting/RedEnvelopeHistory'),

@@ -15,6 +15,7 @@ import Title from './Title'
 import Page from './Page'
 import UserLevelSelectPicker from "./UserLevelSelectPicker"
 import UserLevelSelectPickerResult from "./UserLevelSelectPickerResult"
+import ActivityTypeCard from '@/components/ActivityTypeCard'
 
 const Pocket = {
     install(Vue) {
@@ -35,6 +36,7 @@ const Pocket = {
         Vue.component('p-page', Page)
         Vue.component('p-user-level-select-picker', UserLevelSelectPicker)
         Vue.component('p-user-level-select-picker-result', UserLevelSelectPickerResult)
+        Vue.component('p-activity-type-card', ActivityTypeCard)
     }
 }
 

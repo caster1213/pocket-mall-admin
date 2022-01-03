@@ -1,6 +1,10 @@
 <template>
-  <div v-if="type === 'streak'" class="title-box">
-    <div style="padding: 10px">{{ title }}</div>
+  <div v-if="type === 'streak'"
+       :class="{'title-box':true, 'title-box-large':size === 'large','title-box-min':size === 'min'}">
+    <div class="content">
+      <span>{{ title }}</span>
+      <slot name="right"></slot>
+    </div>
   </div>
   <div v-else-if="type === 'left'" class="title-left" :class="{'title-bg-color':isColor}">
     <div>{{ title }}</div>
@@ -22,17 +26,43 @@ export default {
     type: {
       type: String,
       default: 'streak'
+    },
+    size: {
+      type: String,
+      default: 'large'
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 .title-box {
   background-color: #f8f8f8;
+  width: 100%;
+}
+
+.title-box-large {
+
   font-size: 14px;
   font-weight: 700;
-  width: 100%;
+
+
+  .content {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.title-box-min {
+  font-size: 12px;
+  line-height: 30px;
+
+  .content {
+    padding: 1px 10px;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .title-line {
