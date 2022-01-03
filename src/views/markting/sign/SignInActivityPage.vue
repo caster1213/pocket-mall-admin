@@ -18,11 +18,11 @@
 </template>
 
 <script>
-import Page from '../../../components/Page'
+import Page from '@/components/Page'
 import SignInActivityCountPage from "./SignInActivityCountPage"
 import SignInActivityRulePage from "./SignInActivityRulePage"
-import SignService from '../../../service/sign.service'
-import util from '../../../common/common'
+import SignService from '@/service/sign.service'
+import util from '@/common/common'
 
 export default {
   name: "SignInActivityPage",

@@ -58,14 +58,14 @@
 </template>
 
 <script>
-import Page from '../../../components/Page'
-import NavTitle from '../../../components/Title'
-import GoodsSelectPricker from "../../../components/GoodsSelectPricker"
-import ProductService from '../../../service/product.service'
-import {Field} from '../../../common/field'
-import pattern from "../../../common/pattern"
-import PointExchangeActivityService from '../../../service/point.exchange.activity'
-import constant from "../../../common/constant"
+import Page from '@/components/Page'
+import NavTitle from '@/components/Title'
+import GoodsSelectPricker from "@/components/GoodsSelectPricker"
+import ProductService from '@/service/product.service'
+import {Field} from '@/common/field'
+import pattern from "@/common/pattern"
+import PointExchangeActivityService from '@/service/point.exchange.activity'
+import constant from "@/common/constant"
 import moment from "moment"
 
 export default {

@@ -59,8 +59,8 @@
 
 <script>
 
-import SignService from '../../../service/sign.service'
-import util from '../../../common/common'
+import SignService from '@/service/sign.service'
+import util from '@/common/common'
 
 export default {
   name: "SignInActivityRulePage",

@@ -28,10 +28,10 @@
 </template>
 
 <script>
-import Page from '../../../components/Page'
-import {PaginationConfig} from '../../../common/field'
-import PointExchangeActivityService from '../../../service/point.exchange.activity'
-import constant from "../../../common/constant";
+import Page from '@/components/Page'
+import {PaginationConfig} from '@/common/field'
+import PointExchangeActivityService from '@/service/point.exchange.activity'
+import constant from "@/common/constant"
 
 export default {
   name: "PointExchangePage",

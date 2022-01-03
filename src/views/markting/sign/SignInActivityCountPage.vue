@@ -95,10 +95,10 @@
 </template>
 
 <script>
-import Title from "../../../components/Title"
+import Title from "@/components/Title"
 import * as  echarts from 'echarts'
-import SignService from '../../../service/sign.service'
-import {getPaginationConfig} from '../../../common/field'
+import SignService from '@/service/sign.service'
+import {getPaginationConfig} from '@/common/field'
 import moment from 'moment'
 
 export default {
